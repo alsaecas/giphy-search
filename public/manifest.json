@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Giphy Search",
+  "name": "Seach for any Giphy Gif",
   "icons": [
     {
       "src": "favicon.ico",
