@@ -20,7 +20,12 @@ export const HomePage = () => {
     setGifs([]);
     searchGiphy(debouncedSearchValue, offset, rowsPerPage).then((gifs) => {
       setGifs(gifs.data.data);
-      setTotalPages(gifs.data.pagination.total_count / rowsPerPage);
+      // In documentation there is a limit of 4999 for offset so we limit to 4999 when calculate the total pages
+      setTotalPages(
+        Math.ceil(
+          Math.min(gifs.data.pagination.total_count, 4999) / rowsPerPage
+        )
+      );
     });
   }, [debouncedSearchValue, offset, rowsPerPage]);
   return (
