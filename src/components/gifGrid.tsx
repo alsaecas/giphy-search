@@ -1,5 +1,6 @@
 import React from "react";
 import { Gif } from "../utils/types/gif.type";
+import "../styles/gifGrid.css";
 
 interface Props {
   gifs: Gif[];
@@ -7,19 +8,17 @@ interface Props {
 
 export const GifGrid: React.FC<Props> = ({ gifs }) => {
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-        gap: "1rem",
-      }}
-    >
+    <div className="grid-container">
       {gifs.map((gif, index) => (
-        <img
-          key={index}
-          src={gif.images.fixed_height.url}
-          alt={`GIF ${index}`}
-        />
+        <div className="grid-item">
+          <img
+            className="grid-item-img"
+            key={index}
+            src={gif.images.fixed_height.url}
+            alt={`GIF ${index}`}
+            onClick={() => window.open(gif.url, "_blank")}
+          />
+        </div>
       ))}
     </div>
   );
