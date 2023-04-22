@@ -36,11 +36,13 @@ export const HomePage = () => {
       </div>
       <GifGrid gifs={gifs} />
       <div className="bottom-container">
-        <Pagination
-          totalPages={totalPages}
-          currentPage={offset / rowsPerPage + 1}
-          onPageChange={handlePageChange}
-        />
+        {totalPages > 0 ? (
+          <Pagination
+            totalPages={totalPages}
+            currentPage={offset / rowsPerPage + 1}
+            onPageChange={handlePageChange}
+          />
+        ) : null}
       </div>
     </div>
   );
