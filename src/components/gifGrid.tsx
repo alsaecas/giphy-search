@@ -10,10 +10,9 @@ export const GifGrid: React.FC<Props> = ({ gifs }) => {
   return (
     <div className="grid-container">
       {gifs.map((gif, index) => (
-        <div className="grid-item">
+        <div className="grid-item" key={index}>
           <img
             className="grid-item-img"
-            key={index}
             src={gif.images.fixed_height.url}
             alt={`GIF ${index}`}
             onClick={() => window.open(gif.url, "_blank")}
