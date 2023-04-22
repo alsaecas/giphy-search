@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "../styles/pagination.css";
 interface Props {
   currentPage: number;
   totalPages: number;
@@ -45,19 +45,16 @@ export const Pagination: React.FC<Props> = ({
       ) {
         pages.push(
           <button
+            className={`page-btn-${i === currentPageIndex ? "bold" : "normal"}`}
             key={i}
             onClick={() => handleClick(i)}
-            style={{
-              margin: "0.25rem",
-              fontWeight: i === currentPageIndex ? "bold" : "normal",
-            }}
           >
             {i + 1}
           </button>
         );
       } else if (pages[pages.length - 1].props.children !== "...") {
         pages.push(
-          <span key={i} style={{ margin: "0.25rem" }}>
+          <span className="page-btn-normal" key={i}>
             ...
           </span>
         );
@@ -69,17 +66,23 @@ export const Pagination: React.FC<Props> = ({
 
   return (
     <div
+      className="pagination-container"
       style={{
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <button onClick={handlePrevClick} disabled={currentPageIndex === 0}>
+      <button
+        className="page-btn-normal"
+        onClick={handlePrevClick}
+        disabled={currentPageIndex === 0}
+      >
         {"<"}
       </button>
       {renderPages()}
       <button
+        className="page-btn-normal"
         onClick={handleNextClick}
         disabled={currentPageIndex === totalPages - 1}
       >
