@@ -17,9 +17,8 @@ export const GifGrid: React.FC<Props> = ({ gifs }) => {
       {gifs.map((gif, index) => (
         <img
           key={index}
-          src={gif.images.original.url}
+          src={gif.images.fixed_height.url}
           alt={`GIF ${index}`}
-          style={{ maxWidth: "100%", height: "auto" }}
         />
       ))}
     </div>
