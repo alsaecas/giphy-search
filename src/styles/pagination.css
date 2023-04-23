@@ -5,12 +5,15 @@
 }
 .page-btn-normal {
   cursor: pointer;
-  margin: "0.25rem";
+  margin: 0.25rem;
   font-weight: normal;
 }
 
 .page-btn-bold {
   cursor: pointer;
-  margin: "0.25rem";
+  margin: 0.25rem;
   font-weight: bold;
+}
+.page-btn-dots {
+  margin: 0.25rem;
 }

@@ -54,7 +54,7 @@ export const Pagination: React.FC<Props> = ({
         );
       } else if (pages[pages.length - 1].props.children !== "...") {
         pages.push(
-          <span className="page-btn-normal" key={i}>
+          <span className="page-btn-dots" key={i}>
             ...
           </span>
         );
