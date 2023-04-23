@@ -11,6 +11,7 @@ export const Pagination: React.FC<Props> = ({
   totalPages,
   onPageChange,
 }) => {
+  // eslint-disable-next-line
   const [pagesToShow, setPagesToShow] = useState(5);
   const [currentPageIndex, setCurrentPageIndex] = useState(currentPage - 1);
 

@@ -11,6 +11,7 @@ export const HomePage = () => {
   const [gifs, setGifs] = useState<[]>([]);
   const [totalPages, setTotalPages] = useState<number>(1);
   const [offset, setOffset] = useState<number>(0);
+  // eslint-disable-next-line
   const [rowsPerPage, setRowsPerPage] = useState<number>(12);
 
   const handlePageChange = (page: number) => {
