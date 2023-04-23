@@ -36,7 +36,10 @@ export const HomePage = () => {
           className="search-input"
           type="text"
           value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={(e) => {
+            setOffset(0);
+            setSearchValue(e.target.value);
+          }}
         />
       </div>
       <GifGrid gifs={gifs} />

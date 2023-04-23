@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/pagination.css";
 interface Props {
   currentPage: number;
@@ -14,6 +14,9 @@ export const Pagination: React.FC<Props> = ({
   const [pagesToShow, setPagesToShow] = useState(5);
   const [currentPageIndex, setCurrentPageIndex] = useState(currentPage - 1);
 
+  useEffect(() => {
+    setCurrentPageIndex(currentPage - 1);
+  }, [currentPage]);
   const handleClick = (index: number) => {
     setCurrentPageIndex(index);
     onPageChange(index + 1);
